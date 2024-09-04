@@ -1,12 +1,20 @@
 import React from 'react';
 
-function Home() {
+function Home({ blogs }) {
   return (
     <div>
-      <header>
-        <h1>New Blog</h1>
-      </header>
-      {/* You can add more content here */}
+      <h1>Blog Posts</h1>
+      {blogs && blogs.length > 0 ? (
+        blogs.map((blog, index) => (
+          <div key={index}>
+            <h2>{blog.title}</h2>
+            <p><strong>Author:</strong> {blog.author}</p>
+            <p>{blog.body}</p>
+          </div>
+        ))
+      ) : (
+        <p>No blogs available.</p>
+      )}
     </div>
   );
 }

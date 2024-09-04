@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import { Form, Button } from 'react-bootstrap';
 
-function CreateBlogForm() {
+function CreateBlogForm({ addBlog }) {
+  console.log('addBlog function:', addBlog); // Log to check if addBlog is passed correctly
+
   const [formData, setFormData] = useState({
     author: '',
     title: '',
@@ -18,8 +20,8 @@ function CreateBlogForm() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('Form Data Submitted:', formData);
-    // You can add your form submission logic here
+    addBlog(formData);
+    setFormData({ author: '', title: '', body: '' }); // Clear form after submission
   };
 
   return (

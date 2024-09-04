@@ -1,0 +1,9 @@
+.nav-link-custom {
+    color: lightblue !important;
+  }
+  
+  .nav-link-custom:hover {
+    color: lightblue !important;
+    text-decoration: underline;
+  }
+  
